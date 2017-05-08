@@ -12,7 +12,20 @@ Vue.use(VueRouter)
 export default new VueRouter({
    routes : [
    		{ path: '/', component: Movies },
-   		{ path: '/Music', component: Music },
+   		{ 
+   			path: '/Music', 
+   			component: Music,
+   			children: [
+		        {
+		          path: 'sfzy',
+		          component: Three
+		        },
+		        {
+		        	path:'Four',
+		        	component:Four
+		        }
+		    ]
+   	    },
    		{ path: '/Three', component: Three },
    		{ path: '/Four', component: Four },
    		{ path: '/Five', component: Five },

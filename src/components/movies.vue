@@ -1,11 +1,16 @@
 <template>
 	<div>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		<div class='fn-image-all' v-for='n in 10'>
+			<div class='fn-item-one'>
+				<img src='../assets/logo.png' class='fn-response'>
+			</div>
+			<div class='fn-item-two'>
+				<a href="">我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网我是拉勾网</a>
+			</div>
+			<div class='fn-item-three'>
+				12k-25k
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -23,5 +28,32 @@
 <style type="text/css" scoped>
 	div{
 		width:100%;
+	}
+	.fn-image-all{
+		width:100%;
+		padding:0 1rem;
+		display: flex;
+		margin-bottom:1rem;
+	}
+	.fn-item-one{
+		flex:2;
+		line-height:4rem;
+	}
+	.fn-item-two{
+		flex:5;
+		line-height:2rem;
+		text-align: left;
+	}
+	.fn-item-three{
+		flex:3;
+		line-height:4rem;
+		font-size:24px;
+		color:blue;
+	}
+	.fn-response{
+		max-width:100%;
+		width:4rem;
+		height:auto;
+		display: inline-block;
 	}
 </style>
