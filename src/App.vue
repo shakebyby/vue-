@@ -2,7 +2,7 @@
   <div id="app">
     <header-index></header-index>
       <section-index>
-          <transition name = 'sfzy'>
+          <transition :name = 'trans'>
             <router-view style='display:inline-block;margin-top:9rem;'></router-view>
           </transition>
       </section-index>
@@ -20,12 +20,30 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      trans : 'sfzy',
+      stateTrans : true,
     }
   },
   components:{
     headerIndex,
     footerIndex,
     sectionIndex
+  },
+  watch : {
+    '$route' (to, from){
+      // let toBe = to.path.split('/');
+      // let fromBe = to.path.split('/').length;
+      // if(!toBe[toBe.length-1]){
+      //   toBe = 1;
+      // }
+      // console.log(to);
+      // console.log(from);
+      // console.log(toBe,fromBe)
+      // this.trans = toBe < fromBe ? 'sfzy' : 'sfzys';
+      // console.log(this.trans)
+      this.stateTrans = !this.stateTrans;
+      this.stateTrans ? this.trans = 'sfzy' : this.trans = 'sfzys';
+    }
   }
 }
 </script>
@@ -125,6 +143,18 @@ a {
   display: none;
 }
 
-
+.sfzys-enter-active {
+  animation-name: slideInRight;
+  animation-duration: 0.5s;
+}
+/*.sfzy-leave{
+  animation-name: slideOutRight;
+  animation-duration: 0.5s;
+}*/
+.sfzys-leave-active {
+  /*animation-name: slideOutRight;
+  animation-duration: 0.5s;*/
+  display: none;
+}
 
 </style>

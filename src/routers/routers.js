@@ -11,7 +11,17 @@ Vue.use(VueRouter)
 
 export default new VueRouter({
    routes : [
-   		{ path: '/', component: Movies },
+   		{ 
+   			path: '/',
+   		    component: Movies,
+   		    beforeEnter : (to, from, next) => {
+   		    	// console.log(to);
+   		    	// console.log(from);
+   		    	// alert(1);
+   		    	next();
+   		    },
+   		    meta : {num : 1}
+   		},
    		{ 
    			path: '/Music', 
    			component: Music,
@@ -29,5 +39,12 @@ export default new VueRouter({
    		{ path: '/Three', component: Three },
    		{ path: '/Four', component: Four },
    		{ path: '/Five', component: Five },
-    ]
+    ],
+    scrollBehavior (to, from, savedPosition) {
+	  if (savedPosition) {
+	    return savedPosition
+	  } else {
+	    return { x: 0, y: 0 }
+	  }
+	}
 })
